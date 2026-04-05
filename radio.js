@@ -396,5 +396,15 @@ async function submitPlaylist() {
     }
 }
 
-// Initial Fetch
-document.addEventListener('DOMContentLoaded', fetchPlaylists);
+// Initial Fetch and Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    fetchPlaylists();
+    
+    const form = document.getElementById('playlist-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitPlaylist();
+        });
+    }
+});
