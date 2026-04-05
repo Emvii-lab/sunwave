@@ -1,0 +1,16 @@
+# Local secrets
+.env
+
+# Dependencies
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build outputs
+dist/
+build/

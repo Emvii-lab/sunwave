@@ -1,0 +1,297 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Oxanium:wght@300;400;600;700&display=swap');
+
+:root {
+  --neon-pink: #ff2d55;
+  --neon-cyan: #00f2ff;
+  --neon-purple: #7000ff;
+  --bg-dark: #071018;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --sunset-pink: #ff5a87;
+  --sunset-orange: #ffb347;
+  --sunset-yellow: #fdf497;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Oxanium', sans-serif;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-black {
+  font-family: 'Audiowide', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* Audiowide likes some space */
+}
+
+/* Magic Sunset Fixed Classes */
+.sunset-bg {
+  background: linear-gradient(180deg, var(--sunset-pink) 0%, var(--sunset-orange) 50%, var(--sunset-yellow) 100%) !important;
+  background-attachment: fixed !important;
+  background-size: 100vw 100vh !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(255, 90, 135, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Static Sunset for Interactive elements (prevents purple scroll-mapping) */
+.sunset-static {
+  background: linear-gradient(135deg, var(--sunset-pink) 0%, var(--sunset-orange) 50%, var(--sunset-yellow) 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(252, 124, 66, 0.2);
+  transition: all 0.3s ease;
+}
+
+.sunset-static:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(252, 124, 66, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.2);
+  filter: brightness(1.1);
+}
+
+.sunset-bg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(252, 124, 66, 0.4);
+}
+
+.sunset-bg *, .sunset-static * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.sunset-text {
+  background: linear-gradient(180deg, var(--sunset-pink) 0%, var(--sunset-orange) 50%, var(--sunset-yellow) 100%) !important;
+  background-attachment: fixed !important;
+  background-size: 100vw 100vh !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block;
+  filter: drop-shadow(0 0 2px rgba(255, 45, 85, 0.3));
+}
+
+/* RETROWAVE OVERLAYS */
+.scanlines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.4;
+}
+
+.retrowave-grid {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 400px;
+  background: 
+    linear-gradient(transparent 0%, rgba(112, 0, 255, 0.2) 2%, transparent 5%),
+    linear-gradient(90deg, transparent 0%, rgba(0, 242, 255, 0.2) 2%, transparent 5%);
+  background-size: 60px 60px;
+  transform: perspective(300px) rotateX(60deg) translateX(-25%);
+  z-index: -1;
+  mask-image: linear-gradient(to top, rgba(0,0,0,1), transparent);
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  from { background-position: 0 0; }
+  to { background-position: 0 60px; }
+}
+
+/* PREMIUM CARD STYLE */
+.premium-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: 0.5s;
+}
+
+.premium-card:hover::before {
+  left: 100%;
+}
+
+.premium-card:hover {
+  border-color: rgba(0, 242, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+/* SECTION GLOWS */
+.hero-glow {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 45, 85, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* RADIO PLAYER CUSTOM */
+.radio-container {
+  background: linear-gradient(135deg, rgba(16, 22, 44, 0.8), rgba(26, 35, 64, 0.8));
+  border-left: 4px solid var(--neon-pink);
+  box-shadow: 0 0 30px rgba(255, 45, 85, 0.1);
+}
+/* RADIO V3 — OBSIDIAN SUNSET EDITION */
+.radio-receiver-v3 {
+  background: #05070a;
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,1),
+    inset 0 0 2px rgba(255,255,255,0.05);
+}
+
+.radio-screen-v3 {
+  background: radial-gradient(circle at center, #0a121e 0%, #020408 100%);
+}
+
+.screen-glass-v3 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 40%, rgba(255,255,255,0.02) 50%, transparent 100%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.crt-overlay-v3 {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+  z-index: 25;
+  pointer-events: none;
+  opacity: 0.2;
+}
+
+.screen-on .crt-overlay-v3 {
+  animation: screen-flicker 0.1s infinite;
+  opacity: 0.5;
+}
+
+.screen-on #frequency-value {
+  color: #fff;
+  opacity: 1 !important;
+  text-shadow: 
+    0 0 10px rgba(255,255,255,0.5),
+    0 0 20px var(--sunset-pink),
+    0 0 40px var(--sunset-pink);
+}
+
+.screen-on #station-name {
+  color: var(--sunset-orange);
+  text-shadow: 0 0 10px var(--sunset-orange);
+  opacity: 0.8 !important;
+}
+
+/* Track Title Marquee */
+.track-info-v3 {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.track-title-v3 {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* VU Bars V3 */
+.vu-bar-v3 {
+  transition: all 0.1s ease;
+}
+
+.vu-bar-v3.active {
+  box-shadow: 0 0 8px currentColor;
+  opacity: 1 !important;
+}
+
+.vu-bar-v3:nth-child(-n+8).active { color: var(--sunset-pink); background: var(--sunset-pink); }
+.vu-bar-v3:nth-child(n+9):nth-child(-n+11).active { color: var(--sunset-orange); background: var(--sunset-orange); }
+.vu-bar-v3:nth-child(12).active { color: var(--sunset-yellow); background: var(--sunset-yellow); }
+
+/* Buttons V3 */
+.station-btn-v3 {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.station-btn-v3:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.station-btn-v3.active {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Master Dial V3 */
+.master-dial-v3 {
+  background: radial-gradient(circle at 30% 30%, #1a1f2e 0%, #05070a 100%);
+  box-shadow: 
+    10px 10px 20px rgba(0,0,0,0.8),
+    -2px -2px 5px rgba(255,255,255,0.02),
+    inset 0 0 10px rgba(0,0,0,0.5);
+}
+
+.power-on .dial-glow-ring {
+  opacity: 1;
+  background: radial-gradient(circle at center, transparent 60%, var(--sunset-pink) 100%);
+  box-shadow: inset 0 0 15px var(--sunset-pink);
+}
+
+.power-on .power-icon-v3 {
+  color: var(--sunset-pink) !important;
+  opacity: 1 !important;
+  filter: drop-shadow(0 0 8px var(--sunset-pink));
+}
+
+.power-on .station-btn-v3.active span {
+  text-shadow: 0 0 10px white;
+}
+

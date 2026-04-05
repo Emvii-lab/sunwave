@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" role="img" aria-label="Sunwave retrowave sun with palm silhouette">
+  <title>Sunwave Logo — Retrowave Sun &amp; Palm</title>
+  <defs>
+    <linearGradient id="sunGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5a87"/>
+      <stop offset="50%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#fdf497"/>
+    </linearGradient>
+  </defs>
+  <!-- Sun -->
+  <circle cx="32" cy="32" r="28" fill="url(#sunGrad)" stroke="#ffffff" stroke-width="2"/>
+  <!-- Palm trunk -->
+  <rect x="30" y="24" width="4" height="22" rx="1" fill="#071018"/>
+  <!-- Palm fronds (left/right) -->
+  <path d="M32 24c8-8 18-7 24-1-8-2-14 3-16 7 6-2 12 1 14 6-8-4-14-1-18 2" fill="#071018"/>
+  <path d="M32 24c-8-8-18-7-24-1 8-2 14 3 16 7-6-2-12 1-14 6 8-4 14-1 18 2" fill="#071018"/>
+</svg>
