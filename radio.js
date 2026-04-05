@@ -400,6 +400,7 @@ async function submitPlaylist() {
 document.addEventListener('DOMContentLoaded', () => {
     fetchPlaylists();
     
+    // Playlist Form
     const form = document.getElementById('playlist-form');
     if (form) {
         form.addEventListener('submit', (e) => {
@@ -407,4 +408,31 @@ document.addEventListener('DOMContentLoaded', () => {
             submitPlaylist();
         });
     }
+
+    // Power Button
+    const powerBtn = document.getElementById('power-btn');
+    if (powerBtn) {
+        powerBtn.addEventListener('click', togglePower);
+    }
+
+    // Header Play Button
+    const headerPlayBtn = document.getElementById('header-play-btn');
+    if (headerPlayBtn) {
+        headerPlayBtn.addEventListener('click', triggerRadio);
+    }
+
+    // Station Buttons
+    const stationBtns = document.querySelectorAll('.station-btn-v3');
+    stationBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const stationId = btn.getAttribute('data-station');
+            if (stationId) switchStation(stationId);
+        });
+    });
+
+    // Initialize Feather icons if needed
+    if (window.feather) feather.replace();
 });
+
+// Expose YouTube API callback to global window since this is a module
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;

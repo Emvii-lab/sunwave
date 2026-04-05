@@ -44,7 +44,7 @@
         <a href="#visuals" class="hover:text-white hover:sunset-text flex items-center gap-2 transition-all">Visuels</a>
         <a href="#community" class="hover:text-white hover:sunset-text flex items-center gap-2 transition-all">Communauté</a>
         <a href="#events" class="hover:text-white hover:sunset-text flex items-center gap-2 transition-all">Événements</a>
-        <button id="header-play-btn" onclick="triggerRadio()" class="px-5 py-2.5 rounded-lg sunset-static flex items-center gap-2 hover:scale-105 transition-all shadow-lg shadow-orange-500/10 border border-white/10 group/header">
+        <button id="header-play-btn" class="px-5 py-2.5 rounded-lg sunset-static flex items-center gap-2 hover:scale-105 transition-all shadow-lg shadow-orange-500/10 border border-white/10 group/header">
           <i data-feather="play" class="w-4 h-4 group-[.is-active]:hidden"></i>
           <span class="header-btn-text">Lancer radio</span>
         </button>
@@ -178,15 +178,15 @@
                     <div class="text-[7px] font-black uppercase text-white/20 tracking-widest">Select</div>
                     <div class="text-[7px] font-black uppercase text-white/20 tracking-widest">Phase</div>
                  </div>
-                 <button id="btn-ch1" onclick="switchStation('1')" class="station-btn-v3 px-6 py-3 rounded-xl transition-all relative group/btn">
+                 <button id="btn-ch1" data-station="1" class="station-btn-v3 px-6 py-3 rounded-xl transition-all relative group/btn">
                     <div class="absolute inset-x-2 -bottom-1 h-0.5 bg-pink-500 shadow-[0_0_8px_var(--sunset-pink)] opacity-0 group-[.active]/btn:opacity-100 transition-opacity"></div>
                     <span class="text-[10px] font-black tracking-[0.2em] text-white/20 group-[.active]/btn:text-white transition-colors">CH-01</span>
                  </button>
-                 <button id="btn-ch2" onclick="switchStation('2')" class="station-btn-v3 px-6 py-3 rounded-xl transition-all relative group/btn">
+                 <button id="btn-ch2" data-station="2" class="station-btn-v3 px-6 py-3 rounded-xl transition-all relative group/btn">
                     <div class="absolute inset-x-2 -bottom-1 h-0.5 bg-pink-500 shadow-[0_0_8px_var(--sunset-pink)] opacity-0 group-[.active]/btn:opacity-100 transition-opacity"></div>
                     <span class="text-[10px] font-black tracking-[0.2em] text-white/20 group-[.active]/btn:text-white transition-colors">CH-02</span>
                  </button>
-                 <button id="btn-ch3" onclick="switchStation('3')" class="station-btn-v3 px-6 py-3 rounded-xl transition-all relative group/btn">
+                 <button id="btn-ch3" data-station="3" class="station-btn-v3 px-6 py-3 rounded-xl transition-all relative group/btn">
                     <div class="absolute inset-x-2 -bottom-1 h-0.5 bg-pink-500 shadow-[0_0_8px_var(--sunset-pink)] opacity-0 group-[.active]/btn:opacity-100 transition-opacity"></div>
                     <span class="text-[10px] font-black tracking-[0.2em] text-white/20 group-[.active]/btn:text-white transition-colors">CH-03</span>
                  </button>
@@ -195,7 +195,7 @@
               <!-- Master Dial (Obsidian Finish) -->
               <div class="relative group/dial">
                  <div class="absolute -inset-6 bg-pink-500/5 blur-[50px] opacity-0 group-[.power-on]:opacity-100 transition-opacity"></div>
-                 <button id="power-btn" onclick="togglePower()" class="master-dial-v3 w-20 h-20 rounded-full relative z-10 flex items-center justify-center transition-all bg-[#0a121e] border-2 border-white/5 shadow-2xl overflow-hidden active:scale-95">
+                 <button id="power-btn" class="master-dial-v3 w-20 h-20 rounded-full relative z-10 flex items-center justify-center transition-all bg-[#0a121e] border-2 border-white/5 shadow-2xl overflow-hidden active:scale-95">
                     <div class="dial-glow-ring absolute inset-0 opacity-0 transition-opacity duration-700"></div>
                     <i data-feather="power" class="w-6 h-6 text-white/10 transition-all power-icon-v3 relative z-10"></i>
                  </button>
