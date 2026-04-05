@@ -299,6 +299,36 @@ function parseUrlToEmbed(url) {
 }
 
 /**
+ * Fetches the latest playlist from Supabase and injects it first in the music grid.
+ */
+async function fetchLatestPlaylist() {
+    if (!_supabase) return;
+
+    const { data, error } = await _supabase
+        .from('playlists')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .single();
+
+    if (error || !data) return;
+
+    const grid = document.getElementById('music-grid');
+    if (!grid) return;
+
+    const iframeHeight = data.platform === 'Spotify' ? '100%' : '100%';
+    const safeTitle = data.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const card = document.createElement('div');
+    card.className = 'premium-card rounded-2xl p-2 group h-[400px] relative sm:col-span-2 lg:col-span-1';
+    card.innerHTML = `
+        <div class="absolute top-3 left-3 z-10 px-2 py-0.5 rounded sunset-static text-[8px] font-black text-white uppercase tracking-widest shadow-lg">Nouveau</div>
+        <div class="absolute top-3 right-3 z-10 px-2 py-0.5 rounded bg-black/60 border border-white/10 text-[8px] font-black text-white/60 uppercase tracking-widest">${safeTitle}</div>
+        <iframe src="${data.embed_url}" width="100%" height="${iframeHeight}" loading="lazy" style="border:0;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    `;
+    grid.prepend(card);
+}
+
+/**
  * Fetches approved playlists from Supabase and renders them.
  */
 async function fetchPlaylists() {
@@ -402,6 +432,7 @@ async function submitPlaylist() {
 
 // Initial Fetch and Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
+    fetchLatestPlaylist();
     fetchPlaylists();
     
     // Playlist Form
@@ -438,5 +469,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.feather) feather.replace();
 });
 
-// Expose YouTube API callback to global window since this is a module
+// Expose functions to global window since this is a module
 window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+window.playPlaylist = playPlaylist;
