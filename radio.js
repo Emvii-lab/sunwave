@@ -5,7 +5,9 @@ import { createClient } from '@supabase/supabase-js';
 // These variables are injected by Vite at build time from .env or GitHub Secrets
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'http://localhost:54321'; 
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
-const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const _supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    db: { schema: 'sunwave' }
+});
 
 const STATIONS = {
     '1': 'PLyIFQr1wryPKulMOzAKzBt8EoQD6vMPzA',
