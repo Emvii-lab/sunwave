@@ -241,27 +241,7 @@
       <a class="text-xs font-black uppercase tracking-widest sunset-text border-b border-transparent hover:border-current transition" href="./playlists.html">Tout voir</a>
     </div>
     <div id="music-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      
-      <!-- Card 1: Spotify (Featured) -->
-      <div class="premium-card rounded-2xl p-2 group h-[400px]">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4w5D4L9jkOylI0rOC7gWMX?utm_source=generator&theme=0" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-
-      <!-- Card 2: YouTube Smooth Jams -->
-      <div class="premium-card rounded-2xl p-2 group h-[400px]">
-        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLyIFQr1wryPKulMOzAKzBt8EoQD6vMPzA&origin=https://sunwave-hub.com" title="Smooth Jams" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="rounded-xl border border-white/5" allowfullscreen></iframe>
-      </div>
-
-      <!-- Card 3: YouTube Vocal & Global Hits -->
-      <div class="premium-card rounded-2xl p-2 group h-[400px]">
-        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLyIFQr1wryPKEzgoT30OgiY7oNzQP5wK1&origin=https://sunwave-hub.com" title="Vocal & Global Hits" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="rounded-xl border border-white/5" allowfullscreen></iframe>
-      </div>
-
-      <!-- Card 4: YouTube The Retro Chill -->
-      <div class="premium-card rounded-2xl p-2 group h-[400px]">
-        <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLyIFQr1wryPJis3divgiT8FPdI4SqrnRj&origin=https://sunwave-hub.com" title="The Retro Chill" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="rounded-xl border border-white/5" allowfullscreen></iframe>
-      </div>
-      
+      <!-- Filled dynamically from Supabase (4 most recent) -->
     </div>
 
     <!-- SUBMISSION FORM -->
@@ -284,13 +264,6 @@
       </div>
     </div>
 
-    <!-- OFFICIAL EMBEDS -->
-    <div id="embeds" class="mt-20">
-      <h3 class="text-xl font-black tracking-widest uppercase text-white/40 mb-8">Flux <span class="text-white/60">Audio/Vidéo</span> Approuvé</h3>
-      <div id="embeds-grid" class="grid lg:grid-cols-2 gap-8">
-        <!-- Playlists will be loaded dynamically from Supabase here -->
-      </div>
-    </div>
   </section>
 
   <!-- VISUALS -->

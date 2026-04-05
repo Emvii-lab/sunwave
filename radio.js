@@ -301,79 +301,33 @@ function parseUrlToEmbed(url) {
 /**
  * Fetches the latest playlist from Supabase and injects it first in the music grid.
  */
-async function fetchLatestPlaylist() {
+/**
+ * Fetches the 4 most recent playlists from Supabase and fills the music grid.
+ */
+async function fetchRecentPlaylists() {
     if (!_supabase) return;
 
     const { data, error } = await _supabase
         .from('playlists')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(1)
-        .single();
+        .limit(4);
 
-    if (error || !data) return;
+    if (error || !data || data.length === 0) return;
 
     const grid = document.getElementById('music-grid');
     if (!grid) return;
 
-    const iframeHeight = data.platform === 'Spotify' ? '100%' : '100%';
-    const safeTitle = data.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    const card = document.createElement('div');
-    card.className = 'premium-card rounded-2xl p-2 group h-[400px] relative sm:col-span-2 lg:col-span-1';
-    card.innerHTML = `
-        <div class="absolute top-3 left-3 z-10 px-2 py-0.5 rounded sunset-static text-[8px] font-black text-white uppercase tracking-widest shadow-lg">Nouveau</div>
-        <div class="absolute top-3 right-3 z-10 px-2 py-0.5 rounded bg-black/60 border border-white/10 text-[8px] font-black text-white/60 uppercase tracking-widest">${safeTitle}</div>
-        <iframe src="${data.embed_url}" width="100%" height="${iframeHeight}" loading="lazy" style="border:0;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    `;
-    grid.prepend(card);
-}
-
-/**
- * Fetches approved playlists from Supabase and renders them.
- */
-async function fetchPlaylists() {
-    if (!_supabase) return;
-    
-    const { data, error } = await _supabase
-        .from('playlists')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-    if (error) {
-        console.error("Error fetching playlists:", error);
-        return;
-    }
-
-    renderPlaylists(data);
-}
-
-/**
- * Renders the fetched playlists into the DOM.
- */
-function renderPlaylists(playlists) {
-    const grid = document.getElementById('embeds-grid');
-    if (!grid) return;
-
+    // Clear hardcoded placeholder cards
     grid.innerHTML = '';
 
-    playlists.forEach(p => {
-        const card = document.createElement('div');
-        const borderColor = p.platform === 'Spotify' ? 'border-t-cyan-500/30' : 'border-t-pink-500/30';
-        const tagBg = p.platform === 'Spotify' ? 'bg-cyan-400/10' : 'bg-pink-400/10';
-        const tagColor = p.platform === 'Spotify' ? 'text-cyan-400' : 'text-pink-400';
-        const iframeHeight = p.platform === 'Spotify' ? '352' : '315';
+    data.forEach((p, index) => {
         const safeTitle = p.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        const safePlatform = p.platform.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-        card.className = `premium-card rounded-2xl p-6 border-t-2 ${borderColor}`;
+        const card = document.createElement('div');
+        card.className = 'premium-card rounded-2xl p-2 group h-[400px] relative';
         card.innerHTML = `
-            <div class="flex items-center justify-between mb-4">
-               <div class="text-xs font-black tracking-widest uppercase">${safeTitle}</div>
-               <span class="text-[9px] font-bold ${tagColor} uppercase tracking-widest ${tagBg} px-2 py-0.5 rounded">${safePlatform}</span>
-            </div>
-            <div class="rounded-xl overflow-hidden border border-white/5 shadow-2xl">
-              <iframe src="${p.embed_url}" width="100%" height="${iframeHeight}" loading="lazy" style="border: 0;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            </div>
+            ${index === 0 ? '<div class="absolute top-3 left-3 z-10 px-2 py-0.5 rounded sunset-static text-[8px] font-black text-white uppercase tracking-widest shadow-lg">Nouveau</div>' : ''}
+            <iframe src="${p.embed_url}" width="100%" height="100%" loading="lazy" style="border:0;border-radius:12px;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="${safeTitle}"></iframe>
         `;
         grid.appendChild(card);
     });
@@ -426,14 +380,13 @@ async function submitPlaylist() {
         setStatus(status, "Soumis avec succès !", 'text-emerald-500');
         urlInput.value = '';
         titleInput.value = '';
-        fetchPlaylists();
+        fetchRecentPlaylists();
     }
 }
 
 // Initial Fetch and Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    fetchLatestPlaylist();
-    fetchPlaylists();
+    fetchRecentPlaylists();
     
     // Playlist Form
     const form = document.getElementById('playlist-form');
