@@ -47,6 +47,6 @@ ${_}`}class O extends Error{constructor({message:e,code:r,cause:s,name:n}){var i
                <span class="text-[9px] font-bold ${a} uppercase tracking-widest ${i} px-2 py-0.5 rounded">${r.platform}</span>
             </div>
             <div class="rounded-xl overflow-hidden border border-white/5 shadow-2xl">
-              <iframe src="${r.src}" width="100%" height="${r.platform==="Spotify"?"352":"315"}" loading="lazy" style="border: 0;"></iframe>
+              <iframe src="${r.embed_url}" width="100%" height="${r.platform==="Spotify"?"352":"315"}" loading="lazy" style="border: 0;"></iframe>
             </div>
         `,e.prepend(s)})}document.addEventListener("DOMContentLoaded",Qn);
