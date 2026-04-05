@@ -384,23 +384,9 @@ async function submitPlaylist() {
     }
 }
 
-// Fetch Discord invite link from widget API
-async function fetchDiscordInvite() {
-    const btn = document.getElementById('discord-invite-btn');
-    if (!btn) return;
-    try {
-        const res = await fetch('https://discord.com/api/guilds/1490490289373188208/widget.json');
-        const data = await res.json();
-        if (data.instant_invite) btn.href = data.instant_invite;
-    } catch (e) {
-        console.warn('Discord widget unavailable.');
-    }
-}
-
 // Initial Fetch and Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     fetchRecentPlaylists();
-    fetchDiscordInvite();
     
     // Playlist Form
     const form = document.getElementById('playlist-form');
