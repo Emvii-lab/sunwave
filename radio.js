@@ -56,7 +56,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-function onPlayerReady(event) {
+function onPlayerReady(_event) {
     isPlayerReady = true;
     console.log("Obsidian Receiver v3 — Locked & Loaded.");
 }
@@ -178,7 +178,7 @@ function updateDisplay() {
 // White Noise Generator
 function playStaticNoise(duration) {
     try {
-        if (!audioContext) audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if (!audioContext) audioContext = new (window.AudioContext || /** @type {any} */(window).webkitAudioContext)();
         
         const bufferSize = audioContext.sampleRate * (duration / 1000);
         const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
@@ -384,9 +384,23 @@ async function submitPlaylist() {
     }
 }
 
+// Fetch Discord invite link from widget API
+async function fetchDiscordInvite() {
+    const btn = document.getElementById('discord-invite-btn');
+    if (!btn) return;
+    try {
+        const res = await fetch('https://discord.com/api/guilds/1490490289373188208/widget.json');
+        const data = await res.json();
+        if (data.instant_invite) btn.href = data.instant_invite;
+    } catch (e) {
+        console.warn('Discord widget unavailable.');
+    }
+}
+
 // Initial Fetch and Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     fetchRecentPlaylists();
+    fetchDiscordInvite();
     
     // Playlist Form
     const form = document.getElementById('playlist-form');
