@@ -339,7 +339,7 @@ function renderPlaylists(playlists) {
                <span class="text-[9px] font-bold ${tagColor} uppercase tracking-widest ${tagBg} px-2 py-0.5 rounded">${p.platform}</span>
             </div>
             <div class="rounded-xl overflow-hidden border border-white/5 shadow-2xl">
-              <iframe src="${p.src}" width="100%" height="${p.platform === 'Spotify' ? '352' : '315'}" loading="lazy" style="border: 0;"></iframe>
+              <iframe src="${p.embed_url}" width="100%" height="${p.platform === 'Spotify' ? '352' : '315'}" loading="lazy" style="border: 0;"></iframe>
             </div>
         `;
         grid.prepend(card);
@@ -379,7 +379,7 @@ async function submitPlaylist() {
             title: title,
             url: url,
             platform: embedData.platform,
-            src: embedData.src
+            embed_url: embedData.src
         }]);
 
     if (error) {
