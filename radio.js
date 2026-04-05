@@ -324,28 +324,34 @@ function renderPlaylists(playlists) {
     const grid = document.getElementById('embeds-grid');
     if (!grid) return;
 
-    // We keep the initial hardcoded ones or clear them? 
-    // Clearing for a clean "Approved" feed, but keeping the "Sélection Musicale" static cards.
-    // Let's just append the new ones for now.
-    
+    grid.innerHTML = '';
+
     playlists.forEach(p => {
         const card = document.createElement('div');
         const borderColor = p.platform === 'Spotify' ? 'border-t-cyan-500/30' : 'border-t-pink-500/30';
         const tagBg = p.platform === 'Spotify' ? 'bg-cyan-400/10' : 'bg-pink-400/10';
         const tagColor = p.platform === 'Spotify' ? 'text-cyan-400' : 'text-pink-400';
+        const iframeHeight = p.platform === 'Spotify' ? '352' : '315';
+        const safeTitle = p.title.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const safePlatform = p.platform.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
         card.className = `premium-card rounded-2xl p-6 border-t-2 ${borderColor}`;
         card.innerHTML = `
             <div class="flex items-center justify-between mb-4">
-               <div class="text-xs font-black tracking-widest uppercase">${p.title}</div>
-               <span class="text-[9px] font-bold ${tagColor} uppercase tracking-widest ${tagBg} px-2 py-0.5 rounded">${p.platform}</span>
+               <div class="text-xs font-black tracking-widest uppercase">${safeTitle}</div>
+               <span class="text-[9px] font-bold ${tagColor} uppercase tracking-widest ${tagBg} px-2 py-0.5 rounded">${safePlatform}</span>
             </div>
             <div class="rounded-xl overflow-hidden border border-white/5 shadow-2xl">
-              <iframe src="${p.embed_url}" width="100%" height="${p.platform === 'Spotify' ? '352' : '315'}" loading="lazy" style="border: 0;"></iframe>
+              <iframe src="${p.embed_url}" width="100%" height="${iframeHeight}" loading="lazy" style="border: 0;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </div>
         `;
-        grid.prepend(card);
+        grid.appendChild(card);
     });
+}
+
+function setStatus(el, text, colorClass) {
+    el.textContent = text;
+    el.className = `text-[10px] font-bold uppercase tracking-widest ${colorClass}`;
 }
 
 /**
@@ -363,18 +369,17 @@ async function submitPlaylist() {
 
     const embedData = parseUrlToEmbed(url);
     if (!embedData) {
-        status.textContent = "URL Invalide";
-        status.classList.replace('text-white/20', 'text-red-500');
+        setStatus(status, "URL Invalide", 'text-red-500');
         return;
     }
 
     if (!_supabase) {
-        status.textContent = "Supabase non configuré";
+        setStatus(status, "Supabase non configuré", 'text-red-500');
         return;
     }
 
-    status.textContent = "Envoi...";
-    
+    setStatus(status, "Envoi...", 'text-white/40');
+
     const { error } = await _supabase
         .from('playlists')
         .insert([{
@@ -386,15 +391,12 @@ async function submitPlaylist() {
 
     if (error) {
         console.error("Submission error:", error);
-        status.textContent = "Erreur d'envoi";
+        setStatus(status, "Erreur d'envoi", 'text-red-500');
     } else {
-        status.textContent = "Soumis avec succès !";
-        status.classList.replace('text-white/20', 'text-emerald-500');
+        setStatus(status, "Soumis avec succès !", 'text-emerald-500');
         urlInput.value = '';
         titleInput.value = '';
-        
-        // Refresh grid
-        fetchPlaylists(); 
+        fetchPlaylists();
     }
 }
 
