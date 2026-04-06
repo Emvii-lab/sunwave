@@ -385,12 +385,15 @@ async function submitPlaylist() {
 }
 
 async function fetchDiscordInvite() {
-    const btn = document.getElementById('discord-invite-btn');
-    if (!btn) return;
     try {
         const res = await fetch('https://discord.com/api/guilds/1490490289373188208/widget.json');
         const data = await res.json();
-        if (data.instant_invite) btn.href = data.instant_invite;
+        if (data.instant_invite) {
+            const btn = document.getElementById('discord-invite-btn');
+            const footer = document.getElementById('footer-discord-link');
+            if (btn) btn.href = data.instant_invite;
+            if (footer) footer.href = data.instant_invite;
+        }
     } catch (e) {
         console.warn('Discord widget unavailable.');
     }
