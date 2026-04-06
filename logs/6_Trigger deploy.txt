@@ -1,0 +1,7 @@
+﻿2026-04-06T01:39:35.2126652Z ##[group]Run gh workflow run deploy.yml --ref main
+2026-04-06T01:39:35.2127080Z [36;1mgh workflow run deploy.yml --ref main[0m
+2026-04-06T01:39:35.2152789Z shell: /usr/bin/bash -e {0}
+2026-04-06T01:39:35.2153026Z env:
+2026-04-06T01:39:35.2153580Z   GH_TOKEN: ***
+2026-04-06T01:39:35.2153780Z ##[endgroup]
+2026-04-06T01:39:36.3466771Z https://github.com/Emvii-lab/sunwave/actions/runs/24015285213

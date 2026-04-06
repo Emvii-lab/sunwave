@@ -94,14 +94,20 @@ function buildPrompt() {
     return `${pick(SUBJECTS)}, ${pick(MOODS)}, ${pick(DETAILS)}, ${pick(STYLES)}`;
 }
 
-const GALLERY_IMAGES = [
-    { filename: 'neon_horizon.png' },
-    { filename: 'vhs_dreams.png' },
-    { filename: 'retro_highway.png' },
-    { filename: 'city_of_lights.png' },
-    { filename: 'laser_palm.png' },
-    { filename: 'magenta_sky.png' },
-].map(img => ({ ...img, prompt: buildPrompt() }));
+const ALL_IMAGES = [
+    'neon_horizon.png',
+    'vhs_dreams.png',
+    'retro_highway.png',
+    'city_of_lights.png',
+    'laser_palm.png',
+    'magenta_sky.png',
+];
+
+// Alternate between batch A (images 1-3) and batch B (images 4-6) each week
+const weekNumber = Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7));
+const batch = ALL_IMAGES.slice(weekNumber % 2 === 0 ? 0 : 3, weekNumber % 2 === 0 ? 3 : 6);
+
+const GALLERY_IMAGES = batch.map(filename => ({ filename, prompt: buildPrompt() }));
 
 async function generateImage(prompt) {
     const response = await fetch(ENDPOINT, {
@@ -151,8 +157,8 @@ async function main() {
             console.error(`  ✗ Failed: ${err.message}`);
             // Don't exit — continue with remaining images
         }
-        // Small delay to avoid hitting rate limits
-        await new Promise(r => setTimeout(r, 2000));
+        // Delay between requests to respect free tier rate limits
+        await new Promise(r => setTimeout(r, 8000));
     }
 
     console.log('\nDone.');

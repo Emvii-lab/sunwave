@@ -1,0 +1,328 @@
+﻿2026-04-06T01:39:22.3588967Z ##[group]Run node scripts/generate-gallery.js
+2026-04-06T01:39:22.3590374Z [36;1mnode scripts/generate-gallery.js[0m
+2026-04-06T01:39:22.3636076Z shell: /usr/bin/bash -e {0}
+2026-04-06T01:39:22.3637159Z env:
+2026-04-06T01:39:22.3638287Z   GEMINI_API_KEY: ***
+2026-04-06T01:39:22.3639408Z ##[endgroup]
+2026-04-06T01:39:22.4034695Z Sunwave Hub — Generating weekly gallery images with Gemini...
+2026-04-06T01:39:22.4036185Z 
+2026-04-06T01:39:22.4036805Z Generating: neon_horizon.png...
+2026-04-06T01:39:22.6158418Z   ✗ Failed: API error 429: {
+2026-04-06T01:39:22.6163221Z   "error": {
+2026-04-06T01:39:22.6164139Z     "code": 429,
+2026-04-06T01:39:22.6176451Z     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\nPlease retry in 37.405939616s.",
+2026-04-06T01:39:22.6188129Z     "status": "RESOURCE_EXHAUSTED",
+2026-04-06T01:39:22.6189209Z     "details": [
+2026-04-06T01:39:22.6189999Z       {
+2026-04-06T01:39:22.6190968Z         "@type": "type.googleapis.com/google.rpc.Help",
+2026-04-06T01:39:22.6192201Z         "links": [
+2026-04-06T01:39:22.6192984Z           {
+2026-04-06T01:39:22.6194031Z             "description": "Learn more about Gemini API quotas",
+2026-04-06T01:39:22.6195697Z             "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+2026-04-06T01:39:22.6197342Z           }
+2026-04-06T01:39:22.6198058Z         ]
+2026-04-06T01:39:22.6198767Z       },
+2026-04-06T01:39:22.6199469Z       {
+2026-04-06T01:39:22.6200512Z         "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+2026-04-06T01:39:22.6201845Z         "violations": [
+2026-04-06T01:39:22.6202675Z           {
+2026-04-06T01:39:22.6204415Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+2026-04-06T01:39:22.6207240Z             "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+2026-04-06T01:39:22.6208896Z             "quotaDimensions": {
+2026-04-06T01:39:22.6209924Z               "location": "global",
+2026-04-06T01:39:22.6211145Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:22.6212365Z             }
+2026-04-06T01:39:22.6213120Z           },
+2026-04-06T01:39:22.6213879Z           {
+2026-04-06T01:39:22.6215464Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:22.6218168Z             "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+2026-04-06T01:39:22.6219930Z             "quotaDimensions": {
+2026-04-06T01:39:22.6220960Z               "location": "global",
+2026-04-06T01:39:22.6222168Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:22.6223339Z             }
+2026-04-06T01:39:22.6224081Z           },
+2026-04-06T01:39:22.6224800Z           {
+2026-04-06T01:39:22.6226545Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:22.6228921Z             "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+2026-04-06T01:39:22.6230534Z             "quotaDimensions": {
+2026-04-06T01:39:22.6231596Z               "location": "global",
+2026-04-06T01:39:22.6232827Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:22.6234019Z             }
+2026-04-06T01:39:22.6234770Z           }
+2026-04-06T01:39:22.6235478Z         ]
+2026-04-06T01:39:22.6236721Z       },
+2026-04-06T01:39:22.6237443Z       {
+2026-04-06T01:39:22.6238712Z         "@type": "type.googleapis.com/google.rpc.RetryInfo",
+2026-04-06T01:39:22.6240014Z         "retryDelay": "37s"
+2026-04-06T01:39:22.6240920Z       }
+2026-04-06T01:39:22.6241613Z     ]
+2026-04-06T01:39:22.6242297Z   }
+2026-04-06T01:39:22.6242973Z }
+2026-04-06T01:39:22.6243342Z 
+2026-04-06T01:39:24.6170353Z Generating: vhs_dreams.png...
+2026-04-06T01:39:24.6932618Z   ✗ Failed: API error 429: {
+2026-04-06T01:39:24.6933373Z   "error": {
+2026-04-06T01:39:24.6933774Z     "code": 429,
+2026-04-06T01:39:24.6940141Z     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\nPlease retry in 35.320649793s.",
+2026-04-06T01:39:24.6945472Z     "status": "RESOURCE_EXHAUSTED",
+2026-04-06T01:39:24.6946214Z     "details": [
+2026-04-06T01:39:24.6946598Z       {
+2026-04-06T01:39:24.6947133Z         "@type": "type.googleapis.com/google.rpc.Help",
+2026-04-06T01:39:24.6947732Z         "links": [
+2026-04-06T01:39:24.6948138Z           {
+2026-04-06T01:39:24.6948667Z             "description": "Learn more about Gemini API quotas",
+2026-04-06T01:39:24.6949527Z             "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+2026-04-06T01:39:24.6950215Z           }
+2026-04-06T01:39:24.6950544Z         ]
+2026-04-06T01:39:24.6950856Z       },
+2026-04-06T01:39:24.6951209Z       {
+2026-04-06T01:39:24.6951786Z         "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+2026-04-06T01:39:24.6952468Z         "violations": [
+2026-04-06T01:39:24.6952848Z           {
+2026-04-06T01:39:24.6953722Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+2026-04-06T01:39:24.6955051Z             "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+2026-04-06T01:39:24.6956182Z             "quotaDimensions": {
+2026-04-06T01:39:24.6956762Z               "location": "global",
+2026-04-06T01:39:24.6957384Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:24.6957915Z             }
+2026-04-06T01:39:24.6958279Z           },
+2026-04-06T01:39:24.6958646Z           {
+2026-04-06T01:39:24.6959504Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:24.6960891Z             "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+2026-04-06T01:39:24.6961791Z             "quotaDimensions": {
+2026-04-06T01:39:24.6962294Z               "location": "global",
+2026-04-06T01:39:24.6962890Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:24.6963471Z             }
+2026-04-06T01:39:24.6963824Z           },
+2026-04-06T01:39:24.6964157Z           {
+2026-04-06T01:39:24.6965006Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:24.6966521Z             "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+2026-04-06T01:39:24.6967360Z             "quotaDimensions": {
+2026-04-06T01:39:24.6967874Z               "location": "global",
+2026-04-06T01:39:24.6968522Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:24.6969041Z             }
+2026-04-06T01:39:24.6969458Z           }
+2026-04-06T01:39:24.6969779Z         ]
+2026-04-06T01:39:24.7059369Z       },
+2026-04-06T01:39:24.7059804Z       {
+2026-04-06T01:39:24.7060343Z         "@type": "type.googleapis.com/google.rpc.RetryInfo",
+2026-04-06T01:39:24.7061618Z         "retryDelay": "35s"
+2026-04-06T01:39:24.7062430Z       }
+2026-04-06T01:39:24.7062779Z     ]
+2026-04-06T01:39:24.7063007Z   }
+2026-04-06T01:39:24.7063211Z }
+2026-04-06T01:39:24.7063314Z 
+2026-04-06T01:39:26.6939930Z Generating: retro_highway.png...
+2026-04-06T01:39:26.7605333Z   ✗ Failed: API error 429: {
+2026-04-06T01:39:26.7606121Z   "error": {
+2026-04-06T01:39:26.7606458Z     "code": 429,
+2026-04-06T01:39:26.7610807Z     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image\nPlease retry in 33.252604796s.",
+2026-04-06T01:39:26.7614252Z     "status": "RESOURCE_EXHAUSTED",
+2026-04-06T01:39:26.7614553Z     "details": [
+2026-04-06T01:39:26.7614779Z       {
+2026-04-06T01:39:26.7615093Z         "@type": "type.googleapis.com/google.rpc.Help",
+2026-04-06T01:39:26.7615444Z         "links": [
+2026-04-06T01:39:26.7615666Z           {
+2026-04-06T01:39:26.7616217Z             "description": "Learn more about Gemini API quotas",
+2026-04-06T01:39:26.7616738Z             "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+2026-04-06T01:39:26.7617119Z           }
+2026-04-06T01:39:26.7617318Z         ]
+2026-04-06T01:39:26.7617516Z       },
+2026-04-06T01:39:26.7617711Z       {
+2026-04-06T01:39:26.7618047Z         "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+2026-04-06T01:39:26.7618430Z         "violations": [
+2026-04-06T01:39:26.7618652Z           {
+2026-04-06T01:39:26.7619070Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:26.7619679Z             "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+2026-04-06T01:39:26.7620072Z             "quotaDimensions": {
+2026-04-06T01:39:26.7620336Z               "location": "global",
+2026-04-06T01:39:26.7620651Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:26.7620927Z             }
+2026-04-06T01:39:26.7621109Z           },
+2026-04-06T01:39:26.7621289Z           {
+2026-04-06T01:39:26.7621707Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:26.7622313Z             "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+2026-04-06T01:39:26.7622728Z             "quotaDimensions": {
+2026-04-06T01:39:26.7623041Z               "model": "gemini-2.5-flash-preview-image",
+2026-04-06T01:39:26.7623363Z               "location": "global"
+2026-04-06T01:39:26.7623597Z             }
+2026-04-06T01:39:26.7623787Z           },
+2026-04-06T01:39:26.7623956Z           {
+2026-04-06T01:39:26.7624414Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+2026-04-06T01:39:26.7625064Z             "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+2026-04-06T01:39:26.7625475Z             "quotaDimensions": {
+2026-04-06T01:39:26.7625730Z               "location": "global",
+2026-04-06T01:39:26.7626231Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:26.7626522Z             }
+2026-04-06T01:39:26.7626690Z           }
+2026-04-06T01:39:26.7626863Z         ]
+2026-04-06T01:39:26.7627036Z       },
+2026-04-06T01:39:26.7627198Z       {
+2026-04-06T01:39:26.7627473Z         "@type": "type.googleapis.com/google.rpc.RetryInfo",
+2026-04-06T01:39:26.7627789Z         "retryDelay": "33s"
+2026-04-06T01:39:26.7628002Z       }
+2026-04-06T01:39:26.7628676Z     ]
+2026-04-06T01:39:26.7628845Z   }
+2026-04-06T01:39:26.7629005Z }
+2026-04-06T01:39:26.7629231Z 
+2026-04-06T01:39:28.7605154Z Generating: city_of_lights.png...
+2026-04-06T01:39:28.8319013Z   ✗ Failed: API error 429: {
+2026-04-06T01:39:28.8319453Z   "error": {
+2026-04-06T01:39:28.8319678Z     "code": 429,
+2026-04-06T01:39:28.8323431Z     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\nPlease retry in 31.180331338s.",
+2026-04-06T01:39:28.8327133Z     "status": "RESOURCE_EXHAUSTED",
+2026-04-06T01:39:28.8327441Z     "details": [
+2026-04-06T01:39:28.8327670Z       {
+2026-04-06T01:39:28.8327973Z         "@type": "type.googleapis.com/google.rpc.Help",
+2026-04-06T01:39:28.8328320Z         "links": [
+2026-04-06T01:39:28.8328534Z           {
+2026-04-06T01:39:28.8328856Z             "description": "Learn more about Gemini API quotas",
+2026-04-06T01:39:28.8329360Z             "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+2026-04-06T01:39:28.8329742Z           }
+2026-04-06T01:39:28.8329939Z         ]
+2026-04-06T01:39:28.8330129Z       },
+2026-04-06T01:39:28.8330327Z       {
+2026-04-06T01:39:28.8330650Z         "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+2026-04-06T01:39:28.8331028Z         "violations": [
+2026-04-06T01:39:28.8331262Z           {
+2026-04-06T01:39:28.8331810Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+2026-04-06T01:39:28.8332642Z             "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+2026-04-06T01:39:28.8333140Z             "quotaDimensions": {
+2026-04-06T01:39:28.8333451Z               "location": "global",
+2026-04-06T01:39:28.8333819Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:28.8334153Z             }
+2026-04-06T01:39:28.8334361Z           },
+2026-04-06T01:39:28.8334561Z           {
+2026-04-06T01:39:28.8335066Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:28.8336013Z             "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+2026-04-06T01:39:28.8336519Z             "quotaDimensions": {
+2026-04-06T01:39:28.8336830Z               "location": "global",
+2026-04-06T01:39:28.8337195Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:28.8337517Z             }
+2026-04-06T01:39:28.8337699Z           },
+2026-04-06T01:39:28.8337877Z           {
+2026-04-06T01:39:28.8338301Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:28.8338917Z             "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+2026-04-06T01:39:28.8339310Z             "quotaDimensions": {
+2026-04-06T01:39:28.8339570Z               "location": "global",
+2026-04-06T01:39:28.8339878Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:28.8340148Z             }
+2026-04-06T01:39:28.8340332Z           }
+2026-04-06T01:39:28.8340505Z         ]
+2026-04-06T01:39:28.8340670Z       },
+2026-04-06T01:39:28.8340843Z       {
+2026-04-06T01:39:28.8341114Z         "@type": "type.googleapis.com/google.rpc.RetryInfo",
+2026-04-06T01:39:28.8341431Z         "retryDelay": "31s"
+2026-04-06T01:39:28.8341650Z       }
+2026-04-06T01:39:28.8341814Z     ]
+2026-04-06T01:39:28.8341974Z   }
+2026-04-06T01:39:28.8342137Z }
+2026-04-06T01:39:28.8342238Z 
+2026-04-06T01:39:30.8329411Z Generating: laser_palm.png...
+2026-04-06T01:39:30.9056676Z   ✗ Failed: API error 429: {
+2026-04-06T01:39:30.9057639Z   "error": {
+2026-04-06T01:39:30.9057956Z     "code": 429,
+2026-04-06T01:39:30.9061890Z     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\nPlease retry in 29.108146209s.",
+2026-04-06T01:39:30.9065009Z     "status": "RESOURCE_EXHAUSTED",
+2026-04-06T01:39:30.9065304Z     "details": [
+2026-04-06T01:39:30.9065518Z       {
+2026-04-06T01:39:30.9066030Z         "@type": "type.googleapis.com/google.rpc.Help",
+2026-04-06T01:39:30.9066365Z         "links": [
+2026-04-06T01:39:30.9066554Z           {
+2026-04-06T01:39:30.9066836Z             "description": "Learn more about Gemini API quotas",
+2026-04-06T01:39:30.9067293Z             "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+2026-04-06T01:39:30.9067626Z           }
+2026-04-06T01:39:30.9067803Z         ]
+2026-04-06T01:39:30.9067973Z       },
+2026-04-06T01:39:30.9068134Z       {
+2026-04-06T01:39:30.9068421Z         "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+2026-04-06T01:39:30.9068758Z         "violations": [
+2026-04-06T01:39:30.9068958Z           {
+2026-04-06T01:39:30.9069426Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+2026-04-06T01:39:30.9070096Z             "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+2026-04-06T01:39:30.9070520Z             "quotaDimensions": {
+2026-04-06T01:39:30.9070778Z               "location": "global",
+2026-04-06T01:39:30.9071108Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:30.9071393Z             }
+2026-04-06T01:39:30.9071567Z           },
+2026-04-06T01:39:30.9071746Z           {
+2026-04-06T01:39:30.9072175Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:30.9072799Z             "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+2026-04-06T01:39:30.9073215Z             "quotaDimensions": {
+2026-04-06T01:39:30.9073478Z               "location": "global",
+2026-04-06T01:39:30.9073791Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:30.9074069Z             }
+2026-04-06T01:39:30.9074247Z           },
+2026-04-06T01:39:30.9074509Z           {
+2026-04-06T01:39:30.9075216Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:30.9076199Z             "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+2026-04-06T01:39:30.9076612Z             "quotaDimensions": {
+2026-04-06T01:39:30.9076870Z               "location": "global",
+2026-04-06T01:39:30.9077183Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:30.9077466Z             }
+2026-04-06T01:39:30.9077635Z           }
+2026-04-06T01:39:30.9077803Z         ]
+2026-04-06T01:39:30.9077971Z       },
+2026-04-06T01:39:30.9078133Z       {
+2026-04-06T01:39:30.9078402Z         "@type": "type.googleapis.com/google.rpc.RetryInfo",
+2026-04-06T01:39:30.9078718Z         "retryDelay": "29s"
+2026-04-06T01:39:30.9078933Z       }
+2026-04-06T01:39:30.9079092Z     ]
+2026-04-06T01:39:30.9079257Z   }
+2026-04-06T01:39:30.9079414Z }
+2026-04-06T01:39:30.9079512Z 
+2026-04-06T01:39:32.9053719Z Generating: magenta_sky.png...
+2026-04-06T01:39:32.9701264Z   ✗ Failed: API error 429: {
+2026-04-06T01:39:32.9701872Z   "error": {
+2026-04-06T01:39:32.9702472Z     "code": 429,
+2026-04-06T01:39:32.9706884Z     "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.5-flash-preview-image\nPlease retry in 27.042965872s.",
+2026-04-06T01:39:32.9710722Z     "status": "RESOURCE_EXHAUSTED",
+2026-04-06T01:39:32.9711037Z     "details": [
+2026-04-06T01:39:32.9711269Z       {
+2026-04-06T01:39:32.9711601Z         "@type": "type.googleapis.com/google.rpc.Help",
+2026-04-06T01:39:32.9711983Z         "links": [
+2026-04-06T01:39:32.9712220Z           {
+2026-04-06T01:39:32.9712576Z             "description": "Learn more about Gemini API quotas",
+2026-04-06T01:39:32.9713129Z             "url": "https://ai.google.dev/gemini-api/docs/rate-limits"
+2026-04-06T01:39:32.9713539Z           }
+2026-04-06T01:39:32.9713751Z         ]
+2026-04-06T01:39:32.9713961Z       },
+2026-04-06T01:39:32.9714164Z       {
+2026-04-06T01:39:32.9714516Z         "@type": "type.googleapis.com/google.rpc.QuotaFailure",
+2026-04-06T01:39:32.9714931Z         "violations": [
+2026-04-06T01:39:32.9715180Z           {
+2026-04-06T01:39:32.9715914Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count",
+2026-04-06T01:39:32.9716778Z             "quotaId": "GenerateContentInputTokensPerModelPerMinute-FreeTier",
+2026-04-06T01:39:32.9717312Z             "quotaDimensions": {
+2026-04-06T01:39:32.9717716Z               "model": "gemini-2.5-flash-preview-image",
+2026-04-06T01:39:32.9718131Z               "location": "global"
+2026-04-06T01:39:32.9718429Z             }
+2026-04-06T01:39:32.9718657Z           },
+2026-04-06T01:39:32.9718874Z           {
+2026-04-06T01:39:32.9719412Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:32.9720222Z             "quotaId": "GenerateRequestsPerMinutePerProjectPerModel-FreeTier",
+2026-04-06T01:39:32.9720749Z             "quotaDimensions": {
+2026-04-06T01:39:32.9721080Z               "location": "global",
+2026-04-06T01:39:32.9721471Z               "model": "gemini-2.5-flash-preview-image"
+2026-04-06T01:39:32.9721828Z             }
+2026-04-06T01:39:32.9722056Z           },
+2026-04-06T01:39:32.9722268Z           {
+2026-04-06T01:39:32.9722813Z             "quotaMetric": "generativelanguage.googleapis.com/generate_content_free_tier_requests",
+2026-04-06T01:39:32.9723610Z             "quotaId": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+2026-04-06T01:39:32.9724135Z             "quotaDimensions": {
+2026-04-06T01:39:32.9724496Z               "model": "gemini-2.5-flash-preview-image",
+2026-04-06T01:39:32.9724824Z               "location": "global"
+2026-04-06T01:39:32.9725070Z             }
+2026-04-06T01:39:32.9725246Z           }
+2026-04-06T01:39:32.9725416Z         ]
+2026-04-06T01:39:32.9725585Z       },
+2026-04-06T01:39:32.9725860Z       {
+2026-04-06T01:39:32.9726144Z         "@type": "type.googleapis.com/google.rpc.RetryInfo",
+2026-04-06T01:39:32.9726482Z         "retryDelay": "27s"
+2026-04-06T01:39:32.9726701Z       }
+2026-04-06T01:39:32.9726865Z     ]
+2026-04-06T01:39:32.9727030Z   }
+2026-04-06T01:39:32.9727189Z }
+2026-04-06T01:39:32.9727286Z 
+2026-04-06T01:39:34.9709385Z 
+2026-04-06T01:39:34.9709893Z Done.

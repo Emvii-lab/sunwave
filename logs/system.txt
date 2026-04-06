@@ -1,0 +1,8 @@
+2026-04-06T01:39:16.8710000Z Requested labels: ubuntu-latest
+2026-04-06T01:39:16.8710000Z Job defined at: Emvii-lab/sunwave/.github/workflows/generate-gallery.yml@refs/heads/main
+2026-04-06T01:39:16.8710000Z Waiting for a runner to pick up this job...
+2026-04-06T01:39:16.8710000Z Evaluating generate.if
+2026-04-06T01:39:16.8710000Z Evaluating: success()
+2026-04-06T01:39:16.8710000Z Result: true
+2026-04-06T01:39:17.3650000Z Job is waiting for a hosted runner to come online.
+2026-04-06T01:39:17.3660000Z Job is about to start running on the hosted runner: GitHub Actions 1000000626
