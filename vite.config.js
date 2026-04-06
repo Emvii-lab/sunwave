@@ -8,9 +8,9 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         playlists: resolve(__dirname, 'playlists.html'),
-        fanzine: resolve(__dirname, 'fanzine.html'),
         charte: resolve(__dirname, 'charte.html'),
-        morceaux: resolve(__dirname, 'morceaux.html'),
+        cgu: resolve(__dirname, 'cgu.html'),
+        mentionsLegales: resolve(__dirname, 'mentions-legales.html'),
       }
     }
   }
