@@ -29,6 +29,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add neon_horizon.png vhs_dreams.png retro_highway.png city_of_lights.png laser_palm.png magenta_sky.png
+          git add images/gallery/
           git diff --cached --quiet || git commit -m "chore: weekly gallery refresh"
           git push
