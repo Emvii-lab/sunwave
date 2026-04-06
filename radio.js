@@ -389,10 +389,8 @@ async function fetchDiscordInvite() {
         const res = await fetch('https://discord.com/api/guilds/1490490289373188208/widget.json');
         const data = await res.json();
         if (data.instant_invite) {
-            ['nav-discord-btn', 'cta-discord-btn', 'footer-discord-link'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.href = data.instant_invite;
-            });
+            const el = document.getElementById('cta-discord-btn');
+            if (el) el.href = data.instant_invite;
         }
     } catch (e) {
         console.warn('Discord widget unavailable.');
