@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   generate:
@@ -32,3 +33,8 @@ jobs:
           git add images/gallery/
           git diff --cached --quiet || git commit -m "chore: weekly gallery refresh"
           git push
+
+      - name: Trigger deploy
+        run: gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
