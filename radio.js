@@ -397,10 +397,47 @@ async function fetchDiscordInvite() {
     }
 }
 
+// --- GALLERY LIGHTBOX ---
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    const title = document.getElementById('lightbox-title');
+    const author = document.getElementById('lightbox-author');
+    const download = document.getElementById('lightbox-download');
+    const closeBtn = document.getElementById('lightbox-close');
+    if (!lightbox) return;
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const src = item.dataset.image;
+            img.src = src;
+            img.alt = item.dataset.title;
+            title.textContent = item.dataset.title;
+            author.textContent = item.dataset.author;
+            download.href = src;
+            download.download = item.dataset.title.replace(/ /g, '_') + '.png';
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            if (window.feather) feather.replace();
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+        img.src = '';
+    };
+
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+}
+
 // Initial Fetch and Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     fetchRecentPlaylists();
     fetchDiscordInvite();
+    initLightbox();
     
     // Playlist Form
     const form = document.getElementById('playlist-form');
