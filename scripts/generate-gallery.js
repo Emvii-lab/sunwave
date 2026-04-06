@@ -11,7 +11,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const OUTPUT_DIR = path.join(__dirname, '..', 'images', 'gallery');
+const OUTPUT_DIR = path.join(__dirname, '..', 'public', 'images', 'gallery');
 
 const API_KEY = process.env.GEMINI_API_KEY;
 if (!API_KEY) {
