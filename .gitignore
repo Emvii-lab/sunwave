@@ -14,3 +14,16 @@ Thumbs.db
 # Build outputs
 dist/
 build/
+
+# Screenshots and local captures
+Capture d'écran*.png
+
+# Local logs (GitHub Actions exports)
+logs/
+
+# Design files and prototypes
+maquette-sunwave/
+prototype_hub_retrowave_apercu_complet.jsx
+
+# Unused assets
+sunwave-logo-fixed.svg
