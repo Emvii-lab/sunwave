@@ -19,7 +19,7 @@ if (!API_KEY) {
     process.exit(1);
 }
 
-const MODEL = 'gemini-2.0-flash-preview-image-generation';
+const MODEL = 'gemini-2.5-flash-image';
 const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
 
 // --- PROMPT RANDOMIZER ---
